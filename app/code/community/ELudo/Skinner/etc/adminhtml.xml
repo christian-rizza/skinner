@@ -1,0 +1,27 @@
+<?xml version="1.0"?> <!-- /**  * Magento Admin config  *  * @author Magento  */ --> <config>     
+    <menu>          
+        <skinner translate="title" module="eludo_skinner">
+            <title>Skinner</title>             
+            <sort_order>65</sort_order>             
+            <children>                 
+                <!--
+                <skin translate="title" module="eludo_skinner">
+                    <title>Manage Skins</title> 
+                    <action>adminhtml/skinner/skin</action>
+                    <sort_order>50</sort_order>                 
+                </skin>
+                -->
+                <text translate="title" module="eludo_skinner">
+                    <title>Manage Texts</title>      
+                    <action>adminhtml/skinner/text</action>
+                    <sort_order>51</sort_order>
+                </text>
+                <image translate="title" module="eludo_skinner">
+                    <title>Manage Images</title>      
+                    <action>adminhtml/skinner/image</action>
+                    <sort_order>51</sort_order>
+                </image>
+            </children>          
+        </skinner>     
+    </menu>
+</config>

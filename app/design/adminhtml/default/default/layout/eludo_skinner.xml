@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento backend layout
+ *
+ * @author E-Ludo Interactive
+ */
+-->
+<layout>
+    
+    <adminhtml_skinner_skin>
+        <reference name="content">
+            <block type="eludo_skinner/adminhtml_skinner" name="skinner" />
+        </reference>
+    </adminhtml_skinner_skin>
+    
+    <adminhtml_skinner_image>
+        <reference name="content">
+            <block type="eludo_skinner/adminhtml_image" name="image" />
+        </reference>
+    </adminhtml_skinner_image>
+    
+    <adminhtml_skinner_text>
+        <reference name="content">
+            <block type="eludo_skinner/adminhtml_text" name="text" />
+        </reference>
+    </adminhtml_skinner_text>
+    
+    
+    <!--- Skin Layout -->
+    <adminhtml_skinner_skin_new>
+        <reference name="content">
+            <block type="eludo_skinner/adminhtml_skinner" name="skinner" />
+        </reference>
+    </adminhtml_skinner_skin_new>
+    
+    <adminhtml_skinner_skin_edit>
+        <update handle="editor"/>
+        <reference name="content">
+            <block type="eludo_skinner/adminhtml_skinner_edit" name="skinner" />
+        </reference>
+    </adminhtml_skinner_skin_edit>
+    
+    <!--- Image Layout -->
+    <adminhtml_skinner_image_new>
+        <reference name="content">
+            <block type="eludo_skinner/adminhtml_image" name="skinner" />
+        </reference>
+    </adminhtml_skinner_image_new>
+    
+    <adminhtml_skinner_image_edit>
+        <update handle="editor"/>
+        <reference name="content">
+            <block type="eludo_skinner/adminhtml_image_edit" name="skinner" />
+        </reference>
+    </adminhtml_skinner_image_edit>
+    
+    
+    <!--- Text Layout -->
+    <adminhtml_skinner_text_new>
+        <reference name="content">
+            <block type="eludo_skinner/adminhtml_text" name="skinner" />
+        </reference>
+    </adminhtml_skinner_text_new>
+    
+    <adminhtml_skinner_text_edit>
+        <update handle="editor"/>
+        <reference name="content">
+            <block type="eludo_skinner/adminhtml_text_edit" name="skinner" />
+        </reference>
+    </adminhtml_skinner_text_edit>
+    
+    
+    <!--
+    <adminhtml_skinner_skin_grid>
+        <block type="eludo_skinner/adminhtml_skinner_grid" name="root"/>
+    </adminhtml_skinner_skin_grid>
+
+    
+    
+    
+    <adminhtml_skinner_image>
+        <reference name="content">
+            <block type="eludo_skinner/adminhtml_image" name="skinner" />
+        </reference>
+    </adminhtml_skinner_image>
+    
+    
+    -->
+    
+    
+</layout>

@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<!--
+/**
+* Module configuration
+*
+* @author E-Ludo Interactive
+*/
+-->
+<config>
+    <modules>
+        <ELudo_Skinner>
+            <version>1.0.0.0.1</version>
+        </ELudo_Skinner>
+    </modules>
+    <global>
+        <models>
+            <eludo_skinner>
+                <class>ELudo_Skinner_Model</class>
+                <resourceModel>skinner_resource</resourceModel>
+            </eludo_skinner>
+            <skinner_resource>
+                <class>ELudo_Skinner_Model_Resource</class>
+                <entities>
+                    <skin>
+                        <table>skinner_skin</table>
+                    </skin>
+                    <image>
+                        <table>skinner_image</table>
+                    </image>
+                    <text>
+                        <table>skinner_text</table>
+                    </text>
+                    <save>
+                        <table>skinner_save</table>
+                    </save>
+                </entities>
+            </skinner_resource>
+        </models>
+        <helpers>
+            <eludo_skinner>
+                <class>ELudo_Skinner_Helper</class>
+            </eludo_skinner>
+        </helpers>
+        <blocks>
+            <catalog>
+                <rewrite>
+                    <class>ELudo_Skinner_Block</class>
+                    <product_view>ELudo_Skinner_Block_Product_View</product_view>
+                </rewrite>
+                <rewrite>
+                    <class>ELudo_Skinner_Block</class>
+                    <product_view_media>ELudo_Skinner_Block_Product_View_Media</product_view_media>
+                </rewrite>
+            </catalog>
+            <eludo_skinner>
+                <class>ELudo_Skinner_Block</class>
+            </eludo_skinner>
+        </blocks>
+        <resources>
+            <eludo_skinner_setup>   
+                <setup>
+                    <module>ELudo_Skinner</module>
+                    <class>ELudo_Skinner_Model_Resource_Setup</class>
+                </setup>
+            </eludo_skinner_setup>
+        </resources>
+        <events>
+            <core_block_abstract_prepare_layout_before>
+                <observers>
+                    <eludo_skinner>
+                        <class>eludo_skinner/observer</class>
+                        <method>beforeSkinnerDisplayed</method>
+                    </eludo_skinner>
+                </observers>
+            </core_block_abstract_prepare_layout_before>
+        </events>
+    </global>
+    <frontend>
+        <routers>
+            <eludo_skinner>
+                <use>standard</use>
+                <args>
+                    <module>ELudo_Skinner</module>
+                    <frontName>skinner</frontName>
+                </args>
+            </eludo_skinner>
+        </routers>
+        <layout>
+            <updates>
+                <eludo_skinner>
+                    <file>eludo_skinner.xml</file>
+                </eludo_skinner>
+            </updates>
+        </layout>
+    </frontend>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <ELudo_Skinner before="Mage_Adminhtml">ELudo_Skinner_Adminhtml</ELudo_Skinner>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <adminhtml>
+        <layout>
+            <updates>
+                <eludo_skinner>
+                    <file>eludo_skinner.xml</file>
+                </eludo_skinner>
+            </updates>
+        </layout>
+    </adminhtml>
+</config>

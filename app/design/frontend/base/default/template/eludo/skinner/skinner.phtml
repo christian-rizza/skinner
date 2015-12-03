@@ -1,0 +1,136 @@
+<script type="text/javascript">
+    var baseurl = "<?php echo $this->getBaseUrl(); ?>";
+</script>
+
+<div class="skinner_container">
+    <div class="skinner_header">
+        <button id="btn-product">Product</button>
+        <button id="btn-text">Text</button>
+        <button id="btn-image">Images</button>
+    </div>
+    <div class="skinner_main">
+        <div class="skinner_content">
+            <canvas id="canvas" width="780" height="480">
+                
+            </canvas>
+        </div>
+    </div>
+    <div class="skinner_footer">
+        <input type="text" id="mask_width" value="200" style="width: 100px; text-align: center;" />
+        X
+        <input type="text" id="mask_height" value="100" style="width: 100px; text-align: center;" />
+        <br /><br />
+        <button id="btn-save">Save</button>
+        <button id="btn-download">Download</button>
+        <button id="btn-retrieve">Retrieve</button>
+        <button id="btn-buy">Buy</button>
+    </div>
+</div>
+
+<div id="dialog-wait" class="skinner_dialog" title="Loading...">
+    <p>Loading...</p>
+</div>
+
+<div id="dialog-properties" class="skinner_dialog" title="Properties">
+    <div class="content"></div>
+    <div class="skinner_button">
+    </div>
+</div>
+
+<div id="dialog-product" class="skinner_dialog" title="Product">
+  <select name="products" id="products">
+        <?php $items = $this->getProduct(); ?>
+        <?php foreach ($items as $item) : ?>
+        <option value="<?php echo $item['value']; ?>"><?php echo $item['name']; ?></option>
+        <?php endforeach; ?>
+    </select>
+    
+    <image src="<?php echo ($items[0]['value']); ?>" alt="" />
+    
+    <div class="skinner_button">
+        <input type="button" value="Confirm" class="button btn-confirm" />
+    </div>
+</div>
+<div id="dialog-image" class="skinner_dialog" title="Images">
+    
+    <select name="images" id="images"></select>
+    
+    
+    <image src="" alt="" />
+    
+    <p>
+        <label for="spinner_img-scale">Scale:</label>
+        <input type="text" id="spinner_img-scale" />
+    </p>
+    
+    <div class="skinner_button">
+        <input id="loadimg-file" type="file" style="margin-top: 10px; border: 1px solid darkgray; width: 100%; padding: 5px;">
+        <input id="loadimg-confirm" type="button" value="Load new Image" class="button" />
+    </div>
+    <div class="skinner_button">
+        <input type="button" value="Confirm" class="button btn-confirm" />
+    </div>
+    
+</div>
+<div id="dialog-text" class="skinner_dialog" title="Text">
+    <label>Dafult Text</label>
+    <select name="texts" id="texts">
+        <?php $images = $this->getText(); ?>
+        <?php foreach ($images as $image) : ?>
+        <option value="<?php echo $image['text']; ?>"><?php echo $image['text']; ?></option>
+        <?php endforeach; ?>
+    </select>
+    
+    <label>Text</label>
+    <input type="text" id="skinner_text" />
+    <label>Font Name</label>
+    <select name="font-name" id="font-name" class="font-name">
+    </select>
+    
+    <label>Font Size</label>
+    <select name="font-size" id="font-size">  
+        <?php for ($i=6; $i<96; $i++) : ?>
+        <option value="<?php echo $i;?>" <?php echo ($i==24 ? 'selected="selected"' : "") ?>><?php echo $i; ?></option>
+        <?php endfor; ?>
+    </select>
+    
+    <label>Font Color</label>
+    <input type="text" id="font-color" value="#000000" class="skinner_color" />
+    
+    <div class="skinner_button">
+        <input type="button" value="Confirm" class="button btn-confirm" />
+    </div>
+    
+    
+    
+</div>
+
+<div id="dialog-login" class="skinner_dialog" title="Login">
+    
+    <input type="hidden" id="skinner_formkey" name="form_key" value="<?php echo $this->getFormKey(); ?>" />
+    <input type="hidden" id="skinner_productid" name="product_id" value="<?php echo $this->getProductId(); ?>" />
+    <label for="skinner_username">Username</label>
+    <input type="text" id="skinner_username" name="login[username]" />
+    <label for="skinner_password">Password</label>
+    <input type="password" id="skinner_password" name="login[password]" />
+    
+    <div class="ui-widget">
+	<div class="ui-state-highlight ui-corner-all" style="padding: 10px; margin-bottom: 10px; margin-top: 10px;">
+            <p>
+                <span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+                Pleas log in to continue.
+            </p>
+	</div>
+    </div>
+
+    <div class="skinner_button">
+        <a href="<?php echo $this->getBaseUrl(); ?>customer/account/create/" alt="register" class="button" style="color: #FFF">Register</a>
+        <input type="button" value="Login" class="button btn-confirm" name="send" />
+    </div>
+</div>
+<div id="dialog-retrieve" class="skinner_dialog" title="Retrieve">
+  <p>Product</p>
+</div>
+<div id="dialog-buy" class="skinner_dialog" title="Buy">
+  <p>Product</p>
+</div>

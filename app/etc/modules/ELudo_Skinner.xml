@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+* Module initial config
+*
+* @author E-Ludo Interactive
+*/
+-->
+<config>
+    <modules>
+        <ELudo_Skinner>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                <Mage_Adminhtml />
+            </depends>
+        </ELudo_Skinner>
+    </modules>
+</config>

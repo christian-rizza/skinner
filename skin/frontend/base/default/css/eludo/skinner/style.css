@@ -1,0 +1,82 @@
+.skinner_container
+{
+    width: 800px;
+    border: 1px solid black;
+}
+
+.skinner_header
+{
+    padding: 10px;
+    border-bottom: 1px solid black;
+}
+
+.skinner_main
+{
+    padding: 10px;
+}
+
+.skinner_footer
+{
+    border-top: 1px solid black;
+    padding: 10px;
+}
+
+/***************************
+ * COMMON STYLE
+ ***************************/
+
+.skinner_header, 
+.skinner_footer
+{
+    text-align: center;
+}
+
+.skinner_header button, 
+.skinner_footer button
+{
+    padding: 5px;
+    
+}
+
+/**************************
+ * HEADER
+ **************************/
+
+
+/**************************
+ * CONTENT
+ **************************/
+
+.skinner_sideleft
+{
+    
+}
+
+.skinner_dialog select
+{
+    margin-left: 0 !important;
+}
+
+.skinner_dialog select
+{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.skinner_dialog img
+{
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.skinner_dialog .skinner_button
+{
+    text-align: center;
+}
+.skinner_dialog .skinner_button .button
+{
+    margin: 10px;
+}
+
+
